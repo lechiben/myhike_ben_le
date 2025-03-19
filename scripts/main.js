@@ -147,7 +147,7 @@ function displayCardsDynamically(collection) {
         newcard.querySelector(".card-image").src = `./images/${hikeCode}.jpg`; //Example: NV01.jpg
         newcard.querySelector("a").href = "eachHike.html?docID=" + docID;
         newcard.querySelector("i").id = "save-" + docID; //guaranteed to be unique
-        // newcard.querySelector("i").onclick = () => saveBookmark(docID);
+        // newcard.querySelector("i").onclick = () => saveBookmark(docID);`
 
         newcard.querySelector("i").onclick = () => updateBookmark(docID);
 
