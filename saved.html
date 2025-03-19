@@ -38,14 +38,13 @@
       rel="stylesheet"
       href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css"
     />
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script> -->
 
     <!-------------------------------------------->
     <!-- Other libraries and styles of your own -->
-
     <!-------------------------------------------->
-    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
-    <link rel="stylesheet" href="./styles/style.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/style.css">
   </head>
 
   <body>
@@ -59,10 +58,39 @@
     <!-- the body of your page goes here -->
     <!-- stuff -->
     <div class="container">
-      <h1>Let's Login!</h1>
+      <h1>Saved Hikes for <span id=name-goes-here></span></h1>
+      <!-- Here is container for cards  -->
+      <div class="container">
+        <div id="hikeCardGroup" class="row row-cols-auto">
+        </div>
+      </div>
     </div>
-    <div id="firebaseui-auth-container"></div>
-    <div id="loader">Loading...</div>
+    
+    <!-- Templates for general use, not displayed -->
+<!-- Templates for general use, not displayed -->
+<template id="savedCardTemplate">
+  <div class="card shadow-sm h-100" style="width: 18rem;">
+    <!-- Card Image -->
+    <img class="card-image card-img-top" src="..." alt="Hike Image" style="height: 200px; object-fit: cover;">
+
+    <!-- Card Body -->
+    <div class="card-body d-flex flex-column">
+      <!-- Card Title -->
+      <h5 class="card-title fw-bold mb-3">Card title</h5>
+
+      <!-- Hike Details -->
+      <p class="card-length text-muted mb-4 small">placeholder</p>
+
+      <!-- Read More Button -->
+      <a class="btn btn-primary btn-sm mt-auto mb-2" id="read-more">Read more...</a>
+
+      <!-- Bookmark Icon -->
+      <div class="text-end">
+        <i class="material-icons text-warning" style="cursor: pointer;" title="Bookmark this hike">bookmark_border</i>
+      </div>
+    </div>
+  </div>
+</template>
 
     <!-- our own footer goes here-->
     <nav id="footerPlaceholder"></nav>
@@ -72,7 +100,6 @@
     <!---------------------------------------------->
     <script src="./scripts/firebaseAPI_TEAM99.js"></script>
     <script src="./scripts/skeleton.js"></script>
-    <script src="./scripts/script.js"></script>
-    <script src="./scripts/authentication.js"></script>
+    <script src="./scripts/saved.js"></script>
   </body>
 </html>
